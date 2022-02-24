@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+unsigned int decode(unsigned long int x)
+{
+	int x1=(x & 0x000000FF);
+	int x2=((x & 0x0000FF00)>>8);
+	int x3=((x & 0x00FF0000)>>16);
+	int x4=((x & 0xFF000000)>>24);
+	return (x1+x3)*(x2-x4);
+}
+void main()
+{
+	unsigned int f=(decode(145414379)+decode(85314657)+decode(16998321)+decode(431543177))/4;
+	cout<<f<<endl;
+	
+	
+	
+
+	
+	
+}
